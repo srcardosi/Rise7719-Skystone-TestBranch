@@ -39,7 +39,7 @@ public class RedTwoSkystone extends LinearOpMode {
         path = new AutonomousPathing(hardwareMap);
         path.init();
 
-        while (!this.isStarted) {
+        while (!this.isStarted()) {
             path.initSearch(telemetry);
         }
 
