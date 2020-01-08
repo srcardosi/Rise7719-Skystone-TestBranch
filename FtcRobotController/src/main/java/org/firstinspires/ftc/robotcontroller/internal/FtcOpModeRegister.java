@@ -35,12 +35,15 @@ import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
 
 import org.firstinspires.ftc.robotcontroller.external.samples.ConceptNullOp;
+import org.firstinspires.ftc.robotcore.internal.opmode.OpModeManagerImpl;
 
 /**
  * {@link FtcOpModeRegister} is responsible for registering opmodes for use in an FTC game.
  * @see #register(OpModeManager)
  */
 public class FtcOpModeRegister implements OpModeRegister {
+
+    public static OpModeManagerImpl opModeManager;
 
     /**
      * {@link #register(OpModeManager)} is called by the SDK game in order to register

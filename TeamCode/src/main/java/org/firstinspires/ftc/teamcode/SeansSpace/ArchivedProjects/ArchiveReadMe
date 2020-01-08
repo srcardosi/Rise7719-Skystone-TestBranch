@@ -1,0 +1,7 @@
+The ArchivedProjects folder is a folder for storing old projetcs
+that have been abandoned until another time. This is usually do
+to time constraints.
+
+
+I created an @Archived annotation that functions the exact same
+as @Disabled to signify that the program is Archived.
