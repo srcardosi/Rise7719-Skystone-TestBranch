@@ -37,9 +37,6 @@ public class SeansEncLibrary {//TODO:Change this class to work using the new odo
     private Telemetry telemetry;
     private LinearOpMode linearOpMode;
 
-//    I2CXL ultrasonicFront;
-//    I2CXL ultrasonicBack;
-
     private double     COUNTS_PER_MOTOR_REV    = 537.6;
     private double     EXTERNAL_GEAR_RATIO     = 0.78125;     // This is < 1.0 if geared UP
     private double     WHEEL_DIAMETER_INCHES   = 3.937;     // For figuring circumference
@@ -188,7 +185,7 @@ public class SeansEncLibrary {//TODO:Change this class to work using the new odo
             turnPID.setContinuous(true);
             gyro_angle = gyro.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES);
             turnPID.setSetpoint(gyro_angle.firstAngle);
-            turnPID.setOutputRange(-0.2, 0.2);
+            turnPID.setOutputRange(-0.4, 0.4);
 
             drivePID.setContinuous(false);
             drivePID.setSetpoint(newAverageTarget);
@@ -251,7 +248,7 @@ public class SeansEncLibrary {//TODO:Change this class to work using the new odo
             turnPID.setContinuous(true);
             gyro_angle = gyro.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES);
             turnPID.setSetpoint(gyro_angle.firstAngle);
-            turnPID.setOutputRange(-0.2, 0.2);
+            turnPID.setOutputRange(-0.4, 0.4);
 
 
             drivePID.setContinuous(false);
@@ -284,8 +281,8 @@ public class SeansEncLibrary {//TODO:Change this class to work using the new odo
 //                    right_front_drive.setPower(-strafeDirection * (-speed - steeringSpeed));
                     left_back_drive.setPower(strafeDirection * (speed + steeringSpeed));
                     left_front_drive.setPower(-strafeDirection * (speed + steeringSpeed));
-                    right_back_drive.setPower(-strafeDirection * (speed - steeringSpeed));
-                    right_front_drive.setPower(strafeDirection * (speed - steeringSpeed));
+                    right_back_drive.setPower(-strafeDirection * (speed + steeringSpeed));
+                    right_front_drive.setPower(strafeDirection * (speed + steeringSpeed));
                 } else if (strafeDirection == 1) {
 //                    left_back_drive.setPower(strafeDirection * (-speed + steeringSpeed));
 //                    left_front_drive.setPower(-strafeDirection * (speed + steeringSpeed));
@@ -293,8 +290,8 @@ public class SeansEncLibrary {//TODO:Change this class to work using the new odo
 //                    right_front_drive.setPower(strafeDirection * (-speed - steeringSpeed));
                     left_back_drive.setPower(-strafeDirection * (speed + steeringSpeed));
                     left_front_drive.setPower(strafeDirection * (speed + steeringSpeed));
-                    right_back_drive.setPower(strafeDirection * (speed - steeringSpeed));
-                    right_front_drive.setPower(-strafeDirection * (speed - steeringSpeed));
+                    right_back_drive.setPower(strafeDirection * (speed + steeringSpeed));
+                    right_front_drive.setPower(-strafeDirection * (speed + steeringSpeed));
                 }
             }
 

@@ -42,7 +42,7 @@ public class Blue_Auto_V3 extends LinearOpMode {
 
 
 
-        while (!this.isStarted){
+        while (!this.isStarted()){
             if (detector.found()){
                 telemetry.addData("SS Found!", "");
                 telemetry.addData("X: ", detector.detector.foundRectangle().x);
